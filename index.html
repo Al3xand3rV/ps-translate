@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title class="ps-translate" data-key="title">Translate example</title>
-</head>
-<body>
-  <h1 class="ps-translate" data-key="title">Default text</h1>
-  <div class="ps-translate" data-key="hello">Default text 2</div>
-  <form action="" method="post">
-    <label for="input1" class="ps-translate" data-key="label-input1">Default text 3</label>
-    <input type="text" name="" id="input1" class="ps-translate" data-key="input1" placeholder="Default text 4">
-    <br>
-    <button class="buttonForm ps-translate" data-key="button-form">Enviar</button>
-  </form>
-  <hr>
-  <button class="button1 ps-translate" data-key="button-es">AAA</button>
-  <button class="button2 ps-translate" data-key="button-en">BBB</button>
-  <hr>
-  <div><span class="ps-translate" data-key="developer">Desarrollado por</span> <a href="https://pluginsoft.net">PluginSoft.net</a></div>
-</body>
-</html>
-<script src="js/ps-translate.js"></script>
-<script>
-
-  const langJson = {
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="ps-translate" data-key="title">Translate example</title>
+  </head>
+  <body>
+    <h1 class="ps-translate" data-key="title">Default text</h1>
+    <div class="ps-translate" data-key="hello">Default text 2</div>
+    <form action="" method="post">
+      <label for="input1" class="ps-translate" data-key="label-input1">Default text 3</label>
+      <input type="text" name="" id="input1" class="ps-translate" data-key="input1" placeholder="Default text 4">
+      <br>
+      <button class="buttonForm ps-translate" data-key="button-form">Enviar</button>
+    </form>
+    <hr>
+    <button class="button1 ps-translate" data-key="button-es"></button>
+    <button class="button2 ps-translate" data-key="button-en"></button>
+    <hr>
+    <div><span class="ps-translate" data-key="developer">Desarrollado por</span> <a href="https://pluginsoft.net">PluginSoft.net</a></div>
+  </body>
+  <!-- Enlazamos el archivo JS / Link to JS file -->
+  <script src="js/ps-translate.js"></script>
+  <script>
+    //Diccionario / Dictionary
+    const langJson = {
       "title":
       {
         "en": "Translation example",
@@ -65,21 +65,25 @@
       }
     };
 
-  const pst = new PsTranslate(langJson, 'en');
+    //Inicializando el objeto / initializing the object
+    const pst = new PsTranslate(langJson, 'en');
 
-  pst.setTranslation('developer', 'es', 'Creado por');
-  pst.translateAll2(pst.activeLang);
+    //Ejemplo de la función setTranslation / setTranslation function example
+    pst.setTranslation('developer', 'es', 'Creado por');
+    pst.translateAll2(pst.activeLang);
 
-  document.querySelector(".button1").addEventListener("click", function(e) {
-    pst.translateAll2('es');
-  })
+    //Acciones de botones / Buttons actions
+    document.querySelector(".button1").addEventListener("click", function (e) {
+      pst.translateAll2('es');
+    })
 
-  document.querySelector(".button2").addEventListener("click", function (e) {
-    pst.translateAll2('en');
-  })
+    document.querySelector(".button2").addEventListener("click", function (e) {
+      pst.translateAll2('en');
+    })
 
-  document.querySelector(".buttonForm").addEventListener("click", function (e) {
-    alert( pst.getTranslation('msg', pst.activeLang) );
-  })
+    document.querySelector(".buttonForm").addEventListener("click", function (e) {
+      alert(pst.getTranslation('msg', pst.activeLang));
+    })
 
-</script>
+  </script>
+</html>
