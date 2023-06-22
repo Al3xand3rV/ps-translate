@@ -49,6 +49,15 @@ const pst = new PsTranslate(langJson, 'en');
 <h1 class="ps-translate" data-key="title">Default text</h1>
 <div class="ps-translate" data-key="hello">Default text</div>
 ```
+
+[es] En el caso de las etiquetas INPUT del tipo text y textarea la traducción será realizada automáticamente en el atributo placeholder:
+
+[en] In the case of INPUT tags with text and textarea type, the translation will be done automatically in the placeholder attribute.:
+
+```html
+<input type="text" name="" class="ps-translate" data-key="input-key" placeholder="Default text">
+```
+
 > [es] El atributo data-key contendrá como valor el mismo nombre de la llave principal que se utilizó en el diccionario JSON
 
 > [en] The data-key attribute will contain as a value the same name of the primary key that was used in the JSON dictionary.
